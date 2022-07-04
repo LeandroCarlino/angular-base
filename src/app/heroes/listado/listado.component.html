@@ -1,0 +1,30 @@
+<h2>Listado de Héroes</h2>
+<div style="display: flex; flex-direction: row; ">
+    
+    <div>
+        <button (click)="deleteHeroe()">Borrar</button>  
+    </div>
+    
+    
+    <div style="height: fit-content; min-height: 120px; min-width:200px; border: 1px solid black; padding: 1em;">
+        <ul>
+            <li *ngFor="let heroe of heroes; let i = index">
+            {{i + 1}} - {{heroe}}
+            </li>
+        </ul> 
+    </div>
+    <ng-template #noBorrado >
+        <h3>No ha borrado nada</h3>
+    </ng-template>
+    <div style="height: fit-content; min-height: 120px; min-width:200px; border: 1px solid black; padding: 1em;">
+        <h3 *ngIf="deletedheroe else noBorrado">Borraste a </h3><span>{{deletedheroe}}</span>
+    </div>
+
+</div>
+
+
+
+
+
+
+
